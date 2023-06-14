@@ -7,6 +7,8 @@ const mongoose = require("./config/mongoose");
 app.use(express.json()); // To parse JSON request bodies
 app.use(express.urlencoded({ extended: false })); // To parse URL-encoded request bodies
 
+app.use("/", require("./routes"));
+
 app.listen(port, (err) => {
   if (err) {
     console.log(`Error in running the server: ${err}`);
