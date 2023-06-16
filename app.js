@@ -7,6 +7,8 @@ const mongoose = require("./config/mongoose");
 app.use(express.json()); // To parse JSON request bodies
 app.use(express.urlencoded({ extended: false })); // To parse URL-encoded request bodies
 
+app.use("/uploads", express.static(__dirname + "/uploads"));
+
 app.use("/", require("./routes"));
 
 app.listen(port, (err) => {
@@ -20,5 +22,7 @@ app.listen(port, (err) => {
 /*
 
 // 1. authentication 
+
+2. Product Schema 
 
 */
